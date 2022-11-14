@@ -39,14 +39,18 @@ export default {
 <template>
   <AppHeader />
   <!-- ./header -->
+  <select name="" id="" class="rounded">
+    <option value="">Select category</option>
+  </select>
   <AppMain />
   <!-- ./main -->
 </template>
 
-<style lang="scss">
-.container {
-  background-color: white;
-  max-width: 1140px;
-  margin: 0 auto;
+<style lang="scss" scoped>
+select {
+  padding: 0.25rem;
+  position: relative;
+  left: 250px;
+  margin-bottom: 1rem;
 }
 </style>

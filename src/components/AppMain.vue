@@ -10,20 +10,29 @@ export default {
 </script>
 
 <template>
-  <div class="main">
-    <div class="found_results">Found x characters</div>
+  <main>
+    <div class="found_results">Found 64 characters</div>
     <CharactersList />
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
-.main {
-  background-color: white;
+@use "../assets/scss/partials/variables" as *;
+
+main {
+  background-color: $light;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 3rem;
+
   .found_results {
-    background-color: #2e3a46;
-    color: white;
+    background-color: $clr-primary;
+    color: $light;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card {
+    background-color: $clr-primary;
   }
 }
 </style>
