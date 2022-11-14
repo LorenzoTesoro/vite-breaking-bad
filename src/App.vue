@@ -1,7 +1,8 @@
 <script>
 import axios from "axios";
-import { store } from "./store.js";
 import SiteHeader from "./components/SiteHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import { store } from "./store.js";
 
 export default {
   name: "App",
@@ -12,6 +13,7 @@ export default {
   },
   components: {
     SiteHeader,
+    AppMain,
   },
   methods: {
     callApi(url) {
@@ -37,13 +39,7 @@ export default {
 <template>
   <SiteHeader />
   <!-- ./header -->
-
-  <main>
-    <div class="container">
-      <div class="found_results">Found x characters</div>
-      <div class="card"></div>
-    </div>
-  </main>
+  <AppMain />
   <!-- ./main -->
 </template>
 
