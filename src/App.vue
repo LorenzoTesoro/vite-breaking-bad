@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import SiteHeader from "./components/SiteHeader.vue";
+import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import { store } from "./store.js";
 
@@ -12,7 +12,7 @@ export default {
     };
   },
   components: {
-    SiteHeader,
+    AppHeader,
     AppMain,
   },
   methods: {
@@ -21,7 +21,7 @@ export default {
         .get(url)
         .then((response) => {
           console.log(response);
-          this.store.characters = response.data.results;
+          this.store.characters = response.data;
         })
         .catch((err) => {
           console.error(err.message);
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <SiteHeader />
+  <AppHeader />
   <!-- ./header -->
   <AppMain />
   <!-- ./main -->

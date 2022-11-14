@@ -10,7 +10,9 @@ export default {
 <template>
   <div class="col">
     <div class="card">
-      <img class="card-img-top" :src="character.img" :alt="character.name" />
+      <div>
+        <img class="card-img-top" :src="character.img" :alt="character.name" />
+      </div>
       <div class="card-body">
         <h4 class="card-title">{{ character.name }}</h4>
         <h5 class="card-text">{{ character.category }}</h5>
