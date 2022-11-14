@@ -1,6 +1,7 @@
 <script>
 import axios from "axios";
 import { store } from "./store.js";
+import SiteHeader from "./components/SiteHeader.vue";
 
 export default {
   name: "App",
@@ -8,6 +9,9 @@ export default {
     return {
       store,
     };
+  },
+  components: {
+    SiteHeader,
   },
   methods: {
     callApi(url) {
@@ -31,12 +35,7 @@ export default {
 </script>
 
 <template>
-  <header>
-    <h1>Breaking Bad Api</h1>
-    <select name="" id="">
-      <option value="">Select Category</option>
-    </select>
-  </header>
+  <SiteHeader />
   <!-- ./header -->
 
   <main>
