@@ -9,6 +9,7 @@ export default {
   data() {
     return {
       store,
+      loading: false,
     };
   },
   components: {
@@ -17,21 +18,28 @@ export default {
   },
   methods: {
     callApi(url) {
+      this.loading = true;
       axios
         .get(url)
         .then((response) => {
           console.log(response);
           this.store.characters = response.data;
+          console.log(this.store.characters);
         })
         .catch((err) => {
           console.error(err.message);
           this.store.error = err.message;
+        })
+        .finally(() => {
+          this.loading = false;
         });
     },
   },
   mounted() {
     this.callApi(this.store.API_URL);
+    this.visible = true;
     console.log(this.store);
+    console.log(this.visible);
   },
 };
 </script>
@@ -42,7 +50,10 @@ export default {
   <select name="" id="" class="rounded">
     <option value="">Select category</option>
   </select>
-  <AppMain />
+  <div class="loader" v-if="loading">
+    <h2 class="text-light text-center">Please Wait!</h2>
+  </div>
+  <AppMain v-else />
   <!-- ./main -->
 </template>
 
