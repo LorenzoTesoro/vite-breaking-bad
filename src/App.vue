@@ -51,7 +51,7 @@ export default {
     <option value="">Select category</option>
   </select>
   <div class="loader" v-if="loading">
-    <h2 class="text-light text-center">Please Wait!</h2>
+    <h2 class="text-light text-center">Loading...</h2>
   </div>
   <AppMain v-else />
   <!-- ./main -->
