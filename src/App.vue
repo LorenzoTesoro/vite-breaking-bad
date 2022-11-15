@@ -34,12 +34,22 @@ export default {
           this.loading = false;
         });
     },
+    switchOption(event) {
+      //console.log(event.target.value);
+
+      if (event.target.value == 1) {
+        const url = `${this.store.API_URL}?category=Breaking+Bad`;
+        this.callApi(url);
+      } else if (event.target.value == 2) {
+        const url = `${this.store.API_URL}?category=Better+Call+Saul`;
+        this.callApi(url);
+      }
+    },
   },
   mounted() {
     this.callApi(this.store.API_URL);
     this.visible = true;
-    console.log(this.store);
-    console.log(this.visible);
+    switchOption();
   },
 };
 </script>
@@ -47,8 +57,10 @@ export default {
 <template>
   <AppHeader />
   <!-- ./header -->
-  <select name="" id="" class="rounded">
-    <option value="">Select category</option>
+  <select name="" id="" class="rounded" @change="switchOption">
+    <option>Select category</option>
+    <option value="1">Breaking Bad</option>
+    <option value="2">Better Call Saul</option>
   </select>
   <div class="loader" v-if="loading">
     <h2 class="text-light text-center">Loading...</h2>
@@ -65,3 +77,11 @@ select {
   margin-bottom: 1rem;
 }
 </style>
+
+<!-- 
+ Milestone: Quando l'utente seleziona un valore dalla lista, viene effettuata una chiamata alle API con la serie tv selezionata.
+
+1. Quando l'utente seleziona un valore dalla lista = intercettare l'evento - @change / ok
+2. chiamata alle API con la serie tv selezionata = devo passare come url l'indirizzo dell'api e specifargli tramite una query che cosa prendere.
+
+ -->
