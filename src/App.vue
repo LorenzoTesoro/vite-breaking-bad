@@ -49,7 +49,6 @@ export default {
   mounted() {
     this.callApi(this.store.API_URL);
     this.visible = true;
-    switchOption();
   },
 };
 </script>
@@ -77,11 +76,3 @@ select {
   margin-bottom: 1rem;
 }
 </style>
-
-<!-- 
- Milestone: Quando l'utente seleziona un valore dalla lista, viene effettuata una chiamata alle API con la serie tv selezionata.
-
-1. Quando l'utente seleziona un valore dalla lista = intercettare l'evento - @change / ok
-2. chiamata alle API con la serie tv selezionata = devo passare come url l'indirizzo dell'api e specifargli tramite una query che cosa prendere.
-
- -->

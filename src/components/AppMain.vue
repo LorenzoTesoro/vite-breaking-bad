@@ -1,17 +1,19 @@
 <script>
 import CharactersList from "./CharactersList.vue";
+import ResultsCounter from "./ResultsCounter.vue";
 
 export default {
   name: "AppMain",
   components: {
     CharactersList,
+    ResultsCounter,
   },
 };
 </script>
 
 <template>
   <main>
-    <div class="found_results">Found 64 characters</div>
+    <ResultsCounter />
     <CharactersList />
   </main>
 </template>
